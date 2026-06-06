@@ -1,19 +1,33 @@
-<!--spaceㅤ-->
+<!-- spaceㅤ -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="preload" href="/main/performance.js" as="script">
-    <script src="/main/performance.js" defer></script>
-    <title style="display:none;">CorePad</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Righteous&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+        <title>Enum | Clean Code Editor for Mobile</title>
+        <meta name="description" content="Enum: Clean code, no mess. A high-performance code editor for mobile. Handle 10,000+ lines of code with ease. Fast, responsive, and distraction-free.">
+        <meta name="keywords" content="Enum, Code Editor, Mobile IDE, High Performance Editor, Web Development, Fast Coding, Clean Code">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://enum-enb.pages.dev/">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://enum-enb.pages.dev/">
+        <meta property="og:title" content="Enum: Clean Code, No Mess.">
+        <meta property="og:description" content="The high-performance code editor built for mobile. Stay fast, stay responsive, write better code.">
+        <meta property="og:image" content="/images/enum-og-image.png">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Righteous&display=swap" rel="stylesheet"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Enum Editor",
+      "operatingSystem": "Web",
+      "applicationCategory": "DeveloperApplication",
+      "description": "High-performance code editor for mobile devices."
+    }
+    </script>
 <style>
         :root { --bg: #131314; --panel: #282B2E; --current-cursor-color: #60cc3f; --accent: #807858; --text: #CAC4D0; --smalltext: #AAAAAA; --border: #3A3B3D; }
         /** { box-sizing: border-box; }*/
@@ -214,7 +228,7 @@
         <i style="color: var(--accent);" class="fa-regular fa-floppy-disk" data-action="save" role="button" aria-label="Save code"></i> 
         <i class="fa-solid fa-up-right-from-square" data-action="export" role="button" aria-label="Export"></i>
     </div>
-    <nav class="tabs" role="tablist" aria-label="selection of coding language">
+    <nav class="tabs" role="tablist" role="presentation" aria-label="selection of coding language">
         <div class="tab" style="text-align-last: right;" role="tab" aria-selected="false" data-tab="css"><i class="fa-solid fa-fill-drip"></i> CSS</div>
         <div class="tab active" style="text-align-last: center;" role="tab" aria-selected="true" data-tab="html">HT <i class="fa-solid fa-cube" style="rotate: 30deg; zoom: 0.8;"></i> ML</div>
         <div class="tab" style="text-align-last: left;" role="tab" aria-selected="false" data-tab="js">JS <i class="fa-regular fa-hard-drive"></i></div>
@@ -793,10 +807,12 @@ function enforceSelection() {
     // 2. Aktualizacja UI kart - Poprawiona logika
     const tabElements = document.querySelectorAll('.tabs .tab');
     tabElements.forEach(t => {
-        const isTarget = t.getAttribute('data-tab') === tab;
-        t.classList.toggle('active', isTarget);
-        t.setAttribute('aria-selected', isTarget ? 'true' : 'false');
-    });
+    const isTarget = t.getAttribute('data-tab') === tab;
+      t.classList.toggle('active', isTarget);
+      t.setAttribute('aria-selected', isTarget);
+      t.setAttribute('aria-hidden', !isTarget);
+});
+
 
     currentTab = tab;
 
