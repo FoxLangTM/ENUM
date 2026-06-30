@@ -1,0 +1,9 @@
+# Enum | Clean Code Editor for Mobile
+
+A high-performance code editor designed specifically for mobile devices. It enables smooth handling of over 10,000 lines of code.
+
+## Project Structure
+- `index.html` - The core file containing the application interface, CSS styles, and JavaScript logic, consolidated for optimized performance.
+
+## Usage
+The application runs directly in any modern mobile web browser. No local installation is required.
