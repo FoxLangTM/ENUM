@@ -52,7 +52,7 @@ i { -webkit-user-select: none; -ms-user-select: none; user-select: none; }
 .toolbar { z-index: 9; position: absolute; width: 93%; height: 110px; box-sizing: border-box; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(38, 38, 39, 0.90); border: 1.21px solid #35353c; display: flex; justify-content: center; flex-direction: column; align-items: center; top: 10px; left: 50%; transform: translateX(-50%); border-radius: 22px; color: #A7A7A7; font-size: 1.1rem; box-shadow: #59595f40 0 45px 50px -7px; }
 .tool { position: relative; display: flex; justify-content: center; gap: 15px; padding: 10px; width: 90%; top: 5px; }
 .tool i { position: relative; width: 17px; height: 17px; zoom: 1.15; cursor: pointer; }
-.tabs { overflow-x: auto; z-index: 10; flex-wrap: nowrap; white-space: nowrap; min-width: 100%; position: relative; top: auto; left: auto; display: flex; justify-content: center; gap: 10px; }
+.tabs { z-index: 10; flex-wrap: nowrap; white-space: nowrap; min-width: 100%; position: relative; top: auto; left: auto; display: flex; justify-content: center; gap: 10px; }
 .tab { flex-shrink: 0; overflow: hidden; position: relative; display: flex; font-family: "Kanit", sans-serif; transition: transform .3s ease; min-height: 28px; min-width: 79.47px; justify-content: center; align-items: center; box-shadow: 0 1.5px 10px -2px #1A1A1A; backdrop-filter: saturate(130%); padding: 4px 9px; border-radius: 15px; font-size: .8rem; text-size-adjust: none; -webkit-text-size-adjust: none; color: #636363; cursor: pointer; gap: 3px; }
 .tab::after {
     content: "";
