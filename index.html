@@ -29,37 +29,37 @@
     }
     </script>
 <style>
-        :root { --bg: #131314; --panel: #282B2E; --current-cursor-color: #60cc3f; --accent: #807858; --text: #CAC4D0; --smalltext: #AAAAAA; --border: #3A3B3D; }
-        /** { box-sizing: border-box; }*/
-        body { 
-            touch-action: pan-y; margin: 0; background: var(--bg); color: var(--text);
-            background: #010101; /*#131417*/ /*background-image: url("https://raw.githubusercontent.com/FoxLangTM/Estetic/refs/heads/main/Images/Main-Enum.png");*/ background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
-            font-family: "Nunito"; display: flex; flex-direction: column; 
-            overflow: hidden; user-select: none;
-            height: 100dvh;
-            user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent;
-            padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-        }
-        i { -webkit-user-select: none; -ms-user-select: none; user-select: none; }
-        
-        .overlay { display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .5); z-index: 81; pointer-events: none; }
-        
-        #highlighting-content { color: #b2b7bf; }
-        .token.special-tag { color: #807858; } 
-        .token.tag { color: #6A8759; }         
-        .token.punctuation { color: #f5b36c; }
-        .token.comment { color: #569cd6; font-style: italic; }     
-        .token.keyword { color: #c586c0; }     
-        .token.string { color: #ce9178; }
-        .color-preview { display: inline-block; width: 0; height: 0; position: relative; vertical-align: middle; pointer-events: none; }
-        .color-preview::before { content: ''; display: block; position: absolute; left: -16px; top: -8px; width: 12px; height: 12px; background: inherit; border-radius: 28px; border: 1px solid rgba(255,255,255,0.2); z-index: 2; }
+:root { --bg: #131314; --panel: #282B2E; --current-cursor-color: #60cc3f; --accent: #807858; --text: #CAC4D0; --smalltext: #AAAAAA; --border: #3A3B3D; }
+/** { box-sizing: border-box; }*/
+body { 
+    touch-action: pan-y; margin: 0; background: var(--bg); color: var(--text);
+    background: #010101; /*#131417*/ /*background-image: url("https://raw.githubusercontent.com/FoxLangTM/Estetic/refs/heads/main/Images/Main-Enum.png");*/ background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
+    font-family: "Nunito"; display: flex; flex-direction: column; 
+    overflow: hidden; user-select: none;
+    height: 100dvh;
+    user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent;
+    padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+i { -webkit-user-select: none; -ms-user-select: none; user-select: none; }
 
-        .toolbar { z-index: 9; position: absolute; width: 93%; height: 110px; box-sizing: border-box; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(38, 38, 39, 0.90); border: 1.21px solid #35353c; display: flex; justify-content: center; flex-direction: column; align-items: center; top: 10px; left: 50%; transform: translateX(-50%); display: flex; border-radius: 22px; color: #A7A7A7; font-size: 1.1rem; box-shadow: #59595f40 0 45px 50px -7px; }
-        .tool { position: relative; display: flex; justify-content: center; gap: 15px; padding: 10px; width: 90%; top: 5;}
-        .tool i { position: relative; width: 17px; height: 17px; zoom: 1.15; cursor: pointer; }
-        .tabs { overflow-x: auto; z-index: 10; flex-wrap: nowrap; white-space: nowrap; min-width: 100%; position: relative; top: auto; left: auto; display: flex; justify-content: center; gap: 10px; }
-        .tab { flex-shrink: 0; box-shadow: inset 0 -6px 3px #00000005; overflow: hidden; position: relative; display: flex; font-family: "Kanit", sans-serif; transition: transform .3s ease; min-height: 28px; min-width: 79.47; /*width 107.47*/ justify-content: center; align-items: center; box-shadow: 0 1.5px 10px -2px #1A1A1A; backdrop-filter: saturate(130%); padding: 4px 9px; /*border: 0.8px solid var(--border);*/ border-radius: 15px; font-size: .8rem; text-size-adjust: none; -webkit-text-size-adjust: none; align-items: center; color: #636363; cursor: pointer; gap: 3px; }
-        .tab::after {
+.overlay { display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .5); z-index: 81; pointer-events: none; }
+
+#highlighting-content { color: #b2b7bf; }
+.token.special-tag { color: #807858; } 
+.token.tag { color: #6A8759; }         
+.token.punctuation { color: #f5b36c; }
+.token.comment { color: #569cd6; font-style: italic; }     
+.token.keyword { color: #c586c0; }     
+.token.string { color: #ce9178; }
+.color-preview { display: inline-block; width: 0; height: 0; position: relative; vertical-align: middle; pointer-events: none; }
+.color-preview::before { content: ''; display: block; position: absolute; left: -16px; top: -8px; width: 12px; height: 12px; background: inherit; border-radius: 28px; border: 1px solid rgba(255,255,255,0.2); z-index: 2; }
+
+.toolbar { z-index: 9; position: absolute; width: 93%; height: 110px; box-sizing: border-box; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(38, 38, 39, 0.90); border: 1.21px solid #35353c; display: flex; justify-content: center; flex-direction: column; align-items: center; top: 10px; left: 50%; transform: translateX(-50%); border-radius: 22px; color: #A7A7A7; font-size: 1.1rem; box-shadow: #59595f40 0 45px 50px -7px; }
+.tool { position: relative; display: flex; justify-content: center; gap: 15px; padding: 10px; width: 90%; top: 5px; }
+.tool i { position: relative; width: 17px; height: 17px; zoom: 1.15; cursor: pointer; }
+.tabs { overflow-x: auto; z-index: 10; flex-wrap: nowrap; white-space: nowrap; min-width: 100%; position: relative; top: auto; left: auto; display: flex; justify-content: center; gap: 10px; }
+.tab { flex-shrink: 0; overflow: hidden; position: relative; display: flex; font-family: "Kanit", sans-serif; transition: transform .3s ease; min-height: 28px; min-width: 79.47px; justify-content: center; align-items: center; box-shadow: 0 1.5px 10px -2px #1A1A1A; backdrop-filter: saturate(130%); padding: 4px 9px; border-radius: 15px; font-size: .8rem; text-size-adjust: none; -webkit-text-size-adjust: none; color: #636363; cursor: pointer; gap: 3px; }
+.tab::after {
     content: "";
     position: absolute;
     top: var(--mouse-y, 50%);
@@ -70,38 +70,38 @@
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
-    pointer-events: none; /* Fala nie może blokować kliknięć */
+    pointer-events: none;
     opacity: 0;
 }
 
 .tab:active::after {
-    width: 200px; /* Rozmiar fali po kliknięciu */
+    width: 200px;
     height: 200px;
     opacity: 1;
-    transition: 0s; /* Natychmiastowe pojawienie się przy dotyku */
+    transition: 0s;
 }
-        .tab.active { background: linear-gradient(90deg, hsla(223, 17%, 8%, 1) 0%, hsla(222, 35%, 7%, 1) 57%, hsla(228, 11%, 9%, 1) 74%, hsla(223, 17%, 8%, 1) 92%); font-weight: bold; border-radius: 28px; transform: scale(1.07); color: #E7E7E7; box-shadow: none;}
-        .tab-transition-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, var(--current-cursor-color), transparent); opacity: 0; z-index: 10; pointer-events: none; transform: translateY(100%); }
-        @keyframes slideUpFade { 0% { transform: translateY(100%); opacity: 0.3; } 50% { opacity: 0.1; } 100% { transform: translateY(-100%); opacity: 0; } }
-        .animate-tab { animation: slideUpFade 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        @keyframes iconClick { 0% { transform: rotate(0deg); } 40% { transform: rotate(-7deg); } 60% { transform: rotate(0deg); } 80% { transform: rotate(7deg); } 100% { transform: rotate(0deg); } }
-        .tab-icon-click { animation: iconClick 0.25s ease-out; }
+.tab.active { background: linear-gradient(90deg, hsla(223, 17%, 8%, 1) 0%, hsla(222, 35%, 7%, 1) 57%, hsla(228, 11%, 9%, 1) 74%, hsla(223, 17%, 8%, 1) 92%); font-weight: bold; border-radius: 28px; transform: scale(1.07); color: #E7E7E7; box-shadow: none;}
+.tab-transition-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, var(--current-cursor-color), transparent); opacity: 0; z-index: 10; pointer-events: none; transform: translateY(100%); }
+@keyframes slideUpFade { 0% { transform: translateY(100%); opacity: 0.3; } 50% { opacity: 0.1; } 100% { transform: translateY(-100%); opacity: 0; } }
+.animate-tab { animation: slideUpFade 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+@keyframes iconClick { 0% { transform: rotate(0deg); } 40% { transform: rotate(-7deg); } 60% { transform: rotate(0deg); } 80% { transform: rotate(7deg); } 100% { transform: rotate(0deg); } }
+.tab-icon-click { animation: iconClick 0.25s ease-out; }
 
-        .editor-input::selection { background: rgba(45, 45, 45, .5); border-radius: 20px; }
-        .editor-container { z-index: 8; transition: border-color 0.3s ease; box-sizing: border-box; flex-grow: 1; flex-direction: row; left: 50%; transform: translateX(-50%); transition: border 0.3s ease, border-top: 1px double rgba(255, 255, 255, 0.2); border-bottom: 2px solid transparent; box-shadow 0.3s ease; box-shadow: #202020 0 0px 18px 5.2px; border-radius: 14.2px 14.2px 30px 30px; transition: transform 0.3s ease; position: relative; width: 93%; flex-grow: 1; display: flex; align-items: stretch; background: rgba(255,255,255,0.01); overflow: hidden; margin-top: 108px; margin-bottom: 45px; padding-top: 18px; /*background-image: url("https://raw.githubusercontent.com/FoxLangTM/Estetic/refs/heads/main/Images/paper/screen-home-editor-ocean.webp");*/ background-size: cover; background-position: center bottom; background-size: 100% 100%; background-repeat: no-repeat; background-attachment: scroll; background-color: var(--bg); }
-        .editor-container:focus-within { box-shadow: 0 0 15px rgba(02, 02, 02, 0.1); }
-        .line-numbers { flex-shrink: 0; margin: 0; white-space: pre; font-family: "Righteous", sans-serif; position: relative; line-height: 22px; padding: 10px 5px; text-align: right; color: #555; user-select: none; width: 30px; right: 0; overflow: hidden; pointer-events: none; }
-        .fast-scroll-active { will-change: transform, filter; filter: blur(1.8px); transform: scaleY(1.16) scaleX(0.98); transition: filter 0.2s ease, transform 0.2s ease; opacity: 0.8; }
-        .line-numbers.scrolling { text-shadow: 0 0 10px #1a1a1a; }
-        .line-marker { position: relative; left: 10px; top: 10px; width: 6px; height: 6px; background-color: var(--accent); border-radius: 50%; z-index: 20; transition: top 0.15s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none; }
-        .editor-input { position:relative; caret-color: var(--current-cursor-color); flex-grow: 1; padding: 10px; background: transparent; border: none; outline: none; resize: none; white-space: pre; user-select: text; -webkit-user-select: text; }
-      .editor-container::-webkit-scrollbar, #editor::-webkit-scrollbar { width: 15px !important; height: 0px !important; }
-      .editor-container::-webkit-scrollbar-thumb, #editor::-webkit-scrollbar-thumb { background: #434246 !important; border-radius: 10px; border: 2px solid var(--bg); min-height: 40px !important; }
-      .editor-container::-webkit-scrollbar-track, #editor::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.02); }
+.editor-input::selection { background: rgba(45, 45, 45, .5); border-radius: 20px; }
+.editor-container { z-index: 8; box-sizing: border-box; left: 50%; transform: translateX(-50%); border-bottom: 2px solid transparent; box-shadow: #202020 0 0px 18px 5.2px; border-radius: 14.2px 14.2px 30px 30px; position: relative; width: 93%; flex-grow: 1; display: flex; align-items: stretch; background: rgba(255,255,255,0.01); overflow: hidden; margin-top: 108px; margin-bottom: 45px; padding-top: 18px; background-size: cover; background-position: center bottom; background-size: 100% 100%; background-repeat: no-repeat; background-attachment: scroll; background-color: var(--bg); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+.editor-container:focus-within { box-shadow: 0 0 15px rgba(02, 02, 02, 0.1); }
+.line-numbers { flex-shrink: 0; margin: 0; white-space: pre; font-family: "Righteous", sans-serif; position: relative; line-height: 22px; padding: 10px 5px; text-align: right; color: #555; user-select: none; width: 30px; right: 0; overflow: hidden; pointer-events: none; }
+.fast-scroll-active { will-change: transform, filter; filter: blur(1.8px); transform: scaleY(1.16) scaleX(0.98); transition: filter 0.2s ease, transform 0.2s ease; opacity: 0.8; }
+.line-numbers.scrolling { text-shadow: 0 0 10px #1a1a1a; }
+.line-marker { position: relative; left: 10px; top: 10px; width: 6px; height: 6px; background-color: var(--accent); border-radius: 50%; z-index: 20; transition: top 0.15s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none; }
+.editor-input { position:relative; caret-color: var(--current-cursor-color); flex-grow: 1; padding: 10px; background: transparent; border: none; outline: none; resize: none; white-space: pre; user-select: text; -webkit-user-select: text; }
+.editor-container::-webkit-scrollbar, #editor::-webkit-scrollbar { width: 15px !important; height: 0px !important; }
+.editor-container::-webkit-scrollbar-thumb, #editor::-webkit-scrollbar-thumb { background: #434246 !important; border-radius: 10px; border: 2px solid var(--bg); min-height: 40px !important; }
+.editor-container::-webkit-scrollbar-track, #editor::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.02); }
 
-        .editor-wrapper { transition: filter 0.2s ease-out; background: transparent; position: relative; flex-grow: 1; overflow: hidden; }
-        .content-blur { filter: blur(8px) !important; }
-        #highlighting, #editor {
+.editor-wrapper { transition: filter 0.2s ease-out; background: transparent; position: relative; flex-grow: 1; overflow: hidden; }
+.content-blur { filter: blur(8px) !important; }
+#highlighting, #editor {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     margin: 0; padding: 10px;
@@ -118,35 +118,32 @@
     -webkit-text-size-adjust: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased; }
-        #editor { mix-blend-mode: normal; z-index: 2; color: transparent !important; user-select: none !important; -webkit-user-select: none !important; background: transparent !important; transition: caret-color 0.3s }
-        #editor:focus {
-    overflow-anchor: none;
-    transform: translateZ(0);
-}
-        #highlighting { z-index: 0; overflow: hidden; pointer-events: none; }
-        #highlighting, #highlighting-content, #editor { font-display: swap; font-family: "Nunito", "Quicksand", sans-serif !important; /*font-family: "Pathway Extreme", sans-serif; font-weight: 500*/ font-weight: 700; font-optical-sizing: auto; font-variation-settings:"wdth" 100; }
-        
-        .shadow { pointer-events: none; position: fixed; z-index: 10; background: linear-gradient(to bottom, rgba(255,0,0,0), rgba(13, 12, 17, 1)); width: 100%; height: 68; bottom: 0;}
-        .fab { transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 2.2); color:#858F8C; background:rgba(0,0,0,.08); /*background: #25282C;*/ backdrop-filter: url(#glass); -webkit-backdrop-filter:url(#glass); transition: transform .3s ease; position: fixed; z-index: 12; bottom: 30px; left: 50%; transform: translateX(-50%); min-width: 50px; min-height: 50px; border-radius: 50px; display: flex; justify-content: center; align-items: center; font-size: 20px; outline: none; cursor: pointer; z-index: 11; }
-        .fab i { zoom: 0.9; }
-        .fab:hover { transform: translate(-50%, -1px) scale(1.11); background-color: rgba(0,0,0,.1); border-radius: 28px;}
-        body:has(footer .fab:hover) .editor-container { border-bottom: .5px solid #807858; }
-        .more-btn { transition: transform .3s ease; background: #25282C; width: 40px; height: 40px; align-items: center; display: flex; justify-content: center; border-radius: 19.8px; border: 1.76px solid #495059; position: fixed; bottom: 30px; right: 18px; z-index: 15; }
-        .more-btn:hover { transform: scale(1.15); border-radius: 28px;}
-        .more-btn:focus ~ .menu { display: flex; }
-        .more-btn:focus { outline: none; }
-        .menu { transform: translateY(120%) scale(0.8); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease; transform-origin: bottom right; transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); flex-direction: column; display: flex; visibility: hidden; background: #262627; border-radius: 13px; bottom: 100px; right: 18px; position: absolute; display: column; padding: 20px; z-index: 21;}
-        .menu.show { visibility: visible; opacity: 1; transform: translateY(0) scale(1); }
-        .menu-tab { opacity: 0; transform: translateX(20px); transition: all 0.3s ease; font-family: "Kanit", sans-serif; width: 90px; height: 20px; background: rgba(0,0,0,0); border: 1px solid #333; padding: 6px 18px; border-radius: 28px; font-size: .8rem; justify-content: center; align-items: center; cursor: pointer; }
-        .menu-tab:hover { background: #333; transform: scale(.95); }
-        .menu.show .menu-tab { opacity: 1; transform: translateX(0); }
-        .menu.show .menu-tab:nth-child(1) { transition-delay: 0.1s; } .menu.show .menu-tab:nth-child(2) { transition-delay: 0.2s; } .menu.show .menu-tab:nth-child(3) { transition-delay: 0.3s; }
-        
-        #preview-container { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #272727; z-index: 100; flex-direction: column; border-radius: 18.2px 18.2px 0 0; transition: transform .3s cubic-bezier(.25, 1, .5, 1); transform: translateZ(0); }
-        .drag-handle { border-radius: 5px; border-bottom: 5.76px solid var(--border); position: relative; width: 100%; height: 15px; display: flex; justify-content: center; align-items: center; touch-action: none; z-index: 101; }
-        .drag-handle::after { content: ''; width: 40px; height: 5px; background: #ccc; border-radius: 10px; }
-        #preview-frame { border: none; flex-grow: 1; width: 100%; height: 100%; pointer-events: auto; }
-        
+#editor { mix-blend-mode: normal; z-index: 2; color: transparent !important; user-select: none !important; -webkit-user-select: none !important; background: transparent !important; transition: caret-color 0.3s }
+#editor:focus { overflow-anchor: none; transform: translateZ(0); }
+#highlighting { z-index: 0; overflow: hidden; pointer-events: none; }
+#highlighting, #highlighting-content, #editor { font-display: swap; font-family: "Nunito", "Quicksand", sans-serif !important; font-weight: 700; font-optical-sizing: auto; font-variation-settings:"wdth" 100; }
+
+.shadow { pointer-events: none; position: fixed; z-index: 10; background: linear-gradient(to bottom, rgba(255,0,0,0), rgba(13, 12, 17, 1)); width: 100%; height: 68px; bottom: 0;}
+.fab { transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 2.2); color:#858F8C; background:rgba(0,0,0,.08); backdrop-filter: url(#glass); -webkit-backdrop-filter:url(#glass); position: fixed; z-index: 12; bottom: 30px; left: 50%; transform: translateX(-50%); min-width: 50px; min-height: 50px; border-radius: 50px; display: flex; justify-content: center; align-items: center; font-size: 20px; outline: none; cursor: pointer; }
+.fab i { zoom: 0.9; }
+.fab:hover { transform: translate(-50%, -1px) scale(1.11); background-color: rgba(0,0,0,.1); border-radius: 28px;}
+body:has(footer .fab:hover) .editor-container { border-bottom: .5px solid #807858; }
+.more-btn { transition: transform .3s ease; background: #25282C; width: 40px; height: 40px; align-items: center; display: flex; justify-content: center; border-radius: 19.8px; border: 1.76px solid #495059; position: fixed; bottom: 30px; right: 18px; z-index: 15; }
+.more-btn:hover { transform: scale(1.15); border-radius: 28px;}
+.more-btn:focus ~ .menu { display: flex; }
+.more-btn:focus { outline: none; }
+.menu { transform: translateY(120%) scale(0.8); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease; transform-origin: bottom right; flex-direction: column; display: flex; visibility: hidden; background: #262627; border-radius: 13px; bottom: 100px; right: 18px; position: absolute; padding: 20px; z-index: 21;}
+.menu.show { visibility: visible; opacity: 1; transform: translateY(0) scale(1); }
+.menu-tab { opacity: 0; transform: translateX(20px); transition: all 0.3s ease; font-family: "Kanit", sans-serif; width: 90px; height: 20px; background: rgba(0,0,0,0); border: 1px solid #333; padding: 6px 18px; border-radius: 28px; font-size: .8rem; justify-content: center; align-items: center; cursor: pointer; }
+.menu-tab:hover { background: #333; transform: scale(.95); }
+.menu.show .menu-tab { opacity: 1; transform: translateX(0); }
+.menu.show .menu-tab:nth-child(1) { transition-delay: 0.1s; } .menu.show .menu-tab:nth-child(2) { transition-delay: 0.2s; } .menu.show .menu-tab:nth-child(3) { transition-delay: 0.3s; }
+
+#preview-container { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #272727; z-index: 100; flex-direction: column; border-radius: 18.2px 18.2px 0 0; transition: transform .3s cubic-bezier(.25, 1, .5, 1); transform: translateZ(0); }
+.drag-handle { border-radius: 5px; border-bottom: 5.76px solid var(--border); position: relative; width: 100%; height: 15px; display: flex; justify-content: center; align-items: center; touch-action: none; z-index: 101; }
+.drag-handle::after { content: ''; width: 40px; height: 5px; background: #ccc; border-radius: 10px; }
+#preview-frame { border: none; flex-grow: 1; width: 100%; height: 100%; pointer-events: auto; }
+
 .locate { position:absolute; transform:translate(-50%, -50%); left:50%; top:40%; padding: 15px;width:83%; height:50px; flex-direction:column; display:none; justify-content:center; align-items:center; z-index:98; background:#1E1F24; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 15px 0 rgba(18, 19, 24, .19); border-radius:24px; }
 .locate-input { text-decoration: none; color:#B3B3B3; text-align:center; flex-grow:1; outline:none; background:#121318; border:none; border-radius:20px; width:90%; bottom:50%;} 
 .search-line-item { padding: 8px; border-bottom: 1px solid #333; cursor: pointer; font-size: 0.85rem; color: #AAA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -209,7 +206,7 @@
 @keyframes sparkle-burst { 0% { transform: translate(-50%, -50%) scale(0); opacity: 1; } 50% { transform: translate(-50%, -50%) scale(500); opacity: 1; filter: brightness(2); } 100% { transform: translate(-50%, -50%) scale(1000); opacity: 0; }}
 .animate-sparkle { animation: sparkle-burst 0.6s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;}
 .virtual-selection { background-color: rgba(96, 204, 63, 0.3); position: absolute; pointer-events: none; z-index: -1;}
-    </style>
+</style>
 </head>
 <body>
     <header role="banner">
@@ -218,40 +215,41 @@
         </h1>
         
         <nav class="toolbar" id="main-toolbar" role="toolbar" aria-label="Editor utilities">
-    <div class="tool">
-        <i class="fa-solid fa-cube" data-action="console" role="button" aria-label="Console"></i> 
-        <i class="fa-regular fa-clipboard" data-action="paste" role="button" aria-label="Paste from clipboard"></i> 
-        <i class="fa-regular fa-trash-can" data-action="trash" role="button" aria-label="Delete code"></i>
-        <i class="fa-solid fa-rotate-left" data-action="undo" role="button" aria-label="Undo"></i>
-        <i class="fa-solid fa-rotate-right" data-action="redo" role="button" aria-label="Redo"></i>
-        <i class="fa-solid fa-bars" data-action="bars" role="button" aria-label="Main menu"></i> 
-        <i style="color: var(--accent);" class="fa-regular fa-floppy-disk" data-action="save" role="button" aria-label="Save code"></i> 
-        <i class="fa-solid fa-up-right-from-square" data-action="export" role="button" aria-label="Export"></i>
-    </div>
-    <nav class="tabs" role="tablist" role="presentation" aria-label="selection of coding language">
-        <div class="tab" style="text-align-last: right;" role="tab" aria-selected="false" data-tab="css"><i class="fa-solid fa-fill-drip"></i> CSS</div>
-        <div class="tab active" style="text-align-last: center;" role="tab" aria-selected="true" data-tab="html">HT <i class="fa-solid fa-cube" style="rotate: 30deg; zoom: 0.8;"></i> ML</div>
-        <div class="tab" style="text-align-last: left;" role="tab" aria-selected="false" data-tab="js">JS <i class="fa-regular fa-hard-drive"></i></div>
-    </nav>
-</nav>
+            <div class="tool">
+                <i class="fa-solid fa-cube" data-action="console" role="button" aria-label="Console"></i> 
+                <i class="fa-regular fa-clipboard" data-action="paste" role="button" aria-label="Paste from clipboard"></i> 
+                <i class="fa-regular fa-trash-can" data-action="trash" role="button" aria-label="Delete code"></i>
+                <i class="fa-solid fa-rotate-left" data-action="undo" role="button" aria-label="Undo"></i>
+                <i class="fa-solid fa-rotate-right" data-action="redo" role="button" aria-label="Redo"></i>
+                <i class="fa-solid fa-bars" data-action="bars" role="button" aria-label="Main menu"></i> 
+                <i style="color: var(--accent);" class="fa-regular fa-floppy-disk" data-action="save" role="button" aria-label="Save code"></i> 
+                <i class="fa-solid fa-up-right-from-square" data-action="export" role="button" aria-label="Export"></i>
+            </div>
+            <nav class="tabs" role="tablist" aria-label="Selection of coding language">
+                <div class="tab" style="text-align-last: right;" role="tab" aria-selected="false" data-tab="css"><i class="fa-solid fa-fill-drip"></i> CSS</div>
+                <div class="tab active" style="text-align-last: center;" role="tab" aria-selected="true" data-tab="html">HT <i class="fa-solid fa-cube" style="rotate: 30deg; zoom: 0.8;"></i> ML</div>
+                <div class="tab" style="text-align-last: left;" role="tab" aria-selected="false" data-tab="js">JS <i class="fa-regular fa-hard-drive"></i></div>
+            </nav>
+        </nav>
     </header>
+    
     <aside>
         <div class="more-btn" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-label="More options">
             <i class="fa-solid fa-mattress-pillow"></i>
         </div>
-            <div class="menu" role="menu">
+        <div class="menu" role="menu">
             <div class="menu-tab" role="menuitem" onmousedown="formatCode()"><i class="fa-solid fa-wand-magic-sparkles"></i> Format</div>
             <div class="menu-tab" role="menuitem" onmousedown="searchCode()">Search <i class="fa-solid fa-magnifying-glass-arrow-right"></i></div>
-            <div class="menu-tab" role="menuitem"><i class="fa-solid fa-bars-progress"></i> Beta</div>
+            <div class="menu-tab" role="menuitem" role="button"><i class="fa-solid fa-bars-progress"></i> Beta</div>
         </div>
         <div class="overlay"></div>
     </aside>
 
-<section class="locate" id="locate" role="search">
-    <input class="locate-input" id="locate-input" placeholder="search (min. 3 letters)..." aria-label="Search in code">
-    <div id="search-results-list" style="width: 100%; overflow-y: auto; margin-top: 10px; max-height: 200px;"></div>
-    <h5 onclick="searchCode()" style="cursor:pointer; margin-top:10px;">Close</h5>
-</section>
+    <section class="locate" id="locate" role="search">
+        <input class="locate-input" id="locate-input" placeholder="search (min. 3 letters)..." aria-label="Search in code">
+        <div id="search-results-list" style="width: 100%; overflow-y: auto; margin-top: 10px; max-height: 200px;"></div>
+        <h5 onclick="searchCode()" style="cursor:pointer; margin-top:10px;">Close</h5>
+    </section>
     
     <div id="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:99; justify-content:center; align-items:center;">
         <div style="background:var(--panel); padding:20px; border-radius:16px; width:80%; text-align:center; border:1px solid var(--border);">
@@ -262,69 +260,71 @@
     </div>
 
     <main id="main-content" style="display: contents;">
-    <div id="delete-wave" class="delete-wave-overlay"></div>
+        <div id="delete-wave" class="delete-wave-overlay"></div>
         <div class="editor-container">
-        <div id="tab-anim" class="tab-transition-overlay"></div>
-        <div id="line-marker" class="line-marker"></div>
+            <div id="tab-anim" class="tab-transition-overlay"></div>
+            <div id="line-marker" class="line-marker"></div>
             <div class="line-numbers" id="line-numbers" aria-hidden="true">1</div>
             <div class="editor-wrapper">
                 <pre id="highlighting" aria-hidden="true"><code id="highlighting-content"></code></pre>
-                <textarea contenteditable="true" class="editor-input" id="editor" inputmode="text" enterkeyhint="enter" spellcheck="false" autocorrect="off" autocapitalize="off" spellcheck="false" translate="no" oninput="updateText(this.value); updateLines();" aria-label="Code Editor"></textarea>
+                <textarea class="editor-input" id="editor" inputmode="text" enterkeyhint="enter" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" oninput="updateText(this.value); updateLines();" aria-label="Code Editor"></textarea>
             </div>
         </div>
     </main>
+
     <div id="preview-container">
-    <div class="drag-handle" id="preview-handle"></div>
-    <iframe id="preview-frame"></iframe>
-</div>
+        <div class="drag-handle" id="preview-handle"></div>
+        <iframe id="preview-frame" title="Live Preview"></iframe>
+    </div>
 
     <footer role="contentinfo">
         <div class="fab" onclick="runPreview()" role="button" aria-label="Run Code"><i class="fa-solid fa-splotch"></i></div>
         <div class="shadow"></div>
     </footer>
     
-    <section class="console-panel" id="console-panel">
-    <div class="console-header">
-        <span><i class="fa-solid fa-terminal"></i> Console</span>
-        <i class="fa-solid fa-xmark" onclick="toggleConsole()" style="cursor:pointer"></i>
-    </div>
-    <div id="console-logs" class="console-logs">
-        <div class="log-info" style="padding:10px;">No errors! Check preview</div>
-    </div>
-</section>
-<svg style="position: absolute; width: 0; height: 0">
-  <filter id="glass" x="-50%" y="-50%" width="200%" height="200%" primitiveUnits="objectBoundingBox">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="0.02" result="blur"/>
-    <feDisplacementMap id="disp" in="blur" in2="map" scale="0.8" xChannelSelector="R" yChannelSelector="G">
-    </feDisplacementMap>
-  </filter>
-</svg>
-<div id="file-explorer" class="file-explorer">
-    <div class="explorer-header">PROJEKT</div>
-    <div id="file-list-container" class="file-list"></div>
-    <div class="explorer-footer">
-        <button class="btn-create-trigger" onclick="openCreateMenu()">
-            <i class="fa-solid fa-plus"></i> Stwórz
-        </button>
-    </div>
-</div>
+    <section class="console-panel" id="console-panel" aria-label="Console Panel">
+        <div class="console-header">
+            <span><i class="fa-solid fa-terminal"></i> Console</span>
+            <i class="fa-solid fa-xmark" onclick="toggleConsole()" style="cursor:pointer" role="button" aria-label="Close console"></i>
+        </div>
+        <div id="console-logs" class="console-logs">
+            <div class="log-info" style="padding:10px;">No errors! Check preview</div>
+        </div>
+    </section>
 
-<div id="create-file-modal" class="modal-overlay">
-    <div class="modal-content">
-        <h3>File Creating</h3>
-        <input type="text" id="new-file-name" placeholder="(e.g. name.css)">
-        <select id="new-item-type">
-            <option value="file">Files</option>
-            <option value="folder">Folders</option>
-        </select>
-        <div class="modal-buttons">
-            <button onclick="closeCreateMenu()" class="btn-modal btn-cancel">Cancel</button>
-            <button onclick="confirmCreateItem()" class="btn-modal btn-confirm">OK</button>
+    <svg style="position: absolute; width: 0; height: 0" aria-hidden="true">
+        <filter id="glass" x="-50%" y="-50%" width="200%" height="200%" primitiveUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="0.02" result="blur"/>
+            <feDisplacementMap id="disp" in="blur" in2="map" scale="0.8" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
+    </svg>
+
+    <div id="file-explorer" class="file-explorer" aria-label="File Explorer">
+        <div class="explorer-header">PROJECT</div>
+        <div id="file-list-container" class="file-list"></div>
+        <div class="explorer-footer">
+            <button class="btn-create-trigger" onclick="openCreateMenu()">
+                <i class="fa-solid fa-plus"></i> Create
+            </button>
         </div>
     </div>
-</div>
 
-<script src="script.js" defer></script>
+    <div id="create-file-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-create-title">
+        <div class="modal-content">
+            <h3 id="modal-create-title">File/Folder Creation</h3>
+            <input type="text" id="new-file-name" placeholder="(e.g. name.css)" aria-label="New item name">
+            <select id="new-item-type" aria-label="Type of item">
+                <option value="file">File</option>
+                <option value="folder">Folder</option>
+            </select>
+            <div class="modal-buttons">
+                <button onclick="closeCreateMenu()" class="btn-modal btn-cancel">Cancel</button>
+                <button onclick="confirmCreateItem()" class="btn-modal btn-confirm">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 <script>
     let isNavigating = false;
     let touchStartX = 0;
